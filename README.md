@@ -1,4 +1,4 @@
-This are some examples for the jQuery Framework tutorial. You can find the presentation in this url
+These are some examples for the jQuery Framework tutorial. You can find the presentation in this url
 
 First Part
 
