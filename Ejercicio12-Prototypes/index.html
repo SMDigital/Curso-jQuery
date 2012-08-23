@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title></title>
+	
+
+	
+</head>
+<body>
+
+<p>Aun no esta cargado jquery</p>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+
+<script>
+    
+    (function($){
+        
+        var obj=$({});
+        console.log(obj)
+        
+    })(jQuery)
+    
+    $(document).ready(
+        function() {
+        $.getJSON('http://search.twitter.com/search.json?q=cesarlarsson&callback=?', function( results) { 
+	console.log(results)
+});
+    }
+)
+</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+/* 
+    Document   : estilos
+    Created on : 10-may-2012, 21:33:53
+    Author     : cesareduardosuareztrujillo
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+.contenido{
+    height: 30px;
+    background-color: #1b75bb;
+    
+}
+
+.contenedor{
+    background-color: red;
+    height: 100px;
+    width: 300px;
+    
+    
+}
+#resizable { width: 150px; height: 150px; padding: 0.5em; }
+	#resizable h3 { text-align: center; margin: 0; }
