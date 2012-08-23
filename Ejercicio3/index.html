@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title></title>
+	<style>
+	ul li { color: red;}
+	.enfasis { color: green;}
+	</style>
+	
+</head>
+<body>
+
+<div class="container">		
+<ul class="emphasis container">		
+	<li>item</li>		
+	<li>item 2</li>	
+	<li>item 2</li>		
+	<li>item 4</li>			
+<li>item 5</li>			
+<li>			
+	<ul>		
+	<li>item anidado</li>	
+        </ul>			
+</li>		
+</ul>	
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+
+<script>
+    
+$(document).ready( function() {
+        	
+ $('ul.emphasis').children('li').eq(3).prev().text("agregado con jQuery");
+ //Cambiar el estilo entre los hijos, no aplica a elementos anidados
+ //$('ul.emphasis').children('li').addClass("enfasis");
+ //busca todo dentro del contenedor
+ //$('ul.emphasis').find('li').addClass("enfasis");
+     
+ console.log($('ul').parents('.container'));	
+ console.log($('ul').closest('.container'));
+
+})
+
+
+</script>
+
+</body>
+</html>

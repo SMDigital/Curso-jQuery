@@ -1,0 +1,12 @@
+body {
+	background: #cccccc;
+}
+
+#campo{
+    visibility: hidden;
+    
+}
+.contenido{
+    
+    display: none;
+}

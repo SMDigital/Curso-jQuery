@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<meta charset="utf-8" />
+
+<title></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>
+    $(document).ready(
+        function() {
+            $("#hLocationCountryID").change(
+            function() {
+                
+                $.get(
+                "datos"+this.value+".xml",
+                function($xml) {
+                    $xml = $($xml);
+                    var $iso2 = $xml.find("hLocationCountryISO2").text();
+                   
+                    $("select#hLocationStateID").empty();//elimina todos los hijos
+                    // Colocamos los departamentos
+                    $xml.find("hLocationState").each(
+                        function() {
+                            $("select#hLocationStateID").append(
+                            "<option value=" + $(this).attr("hLocationStateID") + ">" +
+                            $(this).text() +
+                            "</option>"
+                            );
+                        }
+                    );
+
+                },
+                "xml"
+                );
+            }
+            );
+        }
+);
+    
+</script>
+</head>
+<body>
+
+    <div id="hLocationCountryIDWrapper">
+        <label for="hLocationCountryID">
+
+        </label>
+        <select id="hLocationCountryID" size="1"
+        name="hLocationCountryID" class="hFormSelectInput">
+        <option value="0">Seleccione un pais</option>
+        <option value="1">colombia</option>
+        </select>
+    </div>
+ 
+    <div>
+    <label for="hLocationStateID">Departamento:</label>
+    <select name="hLocationStateID" id="hLocationStateID">
+    </select>
+    </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+    <hLocationCountryISO2>CA</hLocationCountryISO2>
+    <hLocationCountryISO3>CAN</hLocationCountryISO3>
+    <hLocationStateLabel>Departamento</hLocationStateLabel>
+    <hLocationState hLocationStateID="0"> </hLocationState>
+    <hLocationState hLocationStateID="66">SANTADER</hLocationState>
+    <hLocationState hLocationStateID="67">ANTIOQUIA</hLocationState>
+    <hLocationState hLocationStateID="68">CUNDINAMARCA</hLocationState>
+    <hLocationState hLocationStateID="69">ATLANTICO</hLocationState>
+    <hLocationState hLocationStateID="70">BOLIVAR</hLocationState>
+    <hLocationState hLocationStateID="71">VALLE</hLocationState>
+</response>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>jQuery Eventos</title>
+	<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<h1>Mis primeros pasos con jquery</h1>
+
+<ul>
+    <li class="titulo">Titulo 1</li>
+    <li class="contenido">Comentario</li>
+    <li class="titulo">Titulo 2</li>
+    <li class="contenido">Comentario</li>
+    <li class="titulo">Titulo 3</li>
+    <li class="contenido">Comentario</li>  
+    <li class="titulo">Titulo 4</li>
+    <li class="contenido">Comentario</li> 
+</ul>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+
+<script>
+
+$(document).ready(
+
+function() {
+	
+	
+	/*$('ul li.titulo').on('click', function() {
+		            $(this).next().show();
+            
+            console.log($(this).next());
+              
+	});*/
+        
+        //Otra forma de llegar al mismo resultado
+        $('ul li:even').on('click', function() {
+            
+            //Si quisiera cerrar el resto
+            $('ul li:odd').hide();
+            
+            $(this).next().show();
+            console.log($(this).next());
+              
+	});
+   
+}
+
+)
+
+
+
+
+</script>
+
+
+</body>
+</html>

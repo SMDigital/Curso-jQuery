@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>jQuery Events</title>
+	<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<h1>Mis primeros pasos con jquery</h1>
+
+<button data-file="day">Mostrar Campo</button>
+<div id="campo">Buscar:<input type="text" id="busqueda" value="escribe..." /></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+
+<script>
+
+$(document).ready(
+
+function() {
+
+	
+	$('button').on('click', function() {
+		$('#campo').css("visibility","visible");
+              
+	});
+        
+        
+    //Eventos relacionados con el campo de texto    
+    $('#busqueda').on("focus",function(){
+            $(this).attr("value","")
+        })
+	$('#busqueda').on("blur",function(){
+            $(this).attr("value","escribe")
+        })    
+}
+)
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

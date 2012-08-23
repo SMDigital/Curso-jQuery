@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>Plantilla</title>
+<style>
+h2 span { color: gray; font-size: .8em; }
+</style>
+	<script id="template2" type="text/x-handlebars-template">
+		{{#each this}}
+		<li>
+			<h2>{{fullName2 author}}</h2>
+			<p>{{{tweet}}}</p>
+
+			{{#if quote}}
+				<h5>{{quote}}</h5>
+			{{else}}
+				<h5>Este señor no tiene un tweet.</h5>
+			{{/if}}
+		</li>
+		{{/each}}
+	</script>
+        
+        
+        	<script id="plantilla" type="text/x-handlebars-template">
+		
+		<li>
+			<h2>{{fullName2 author}}</h2>
+			<p>{{{tweet}}}</p>
+
+			{{#if quote}}
+				<h5>{{quote}}</h5>
+			{{else}}
+				<h5>Este señor no tiene un tweet.</h5>
+			{{/if}}
+		</li>
+		
+	</script>
+</head>
+<body>
+<ul class="tweet">
+
+</ul>
+<ul class="tweets">
+
+</ul>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+<script src="http://cloud.github.com/downloads/wycats/handlebars.js/handlebars-1.0.0.beta.6.js"></script>
+
+<script>
+
+(function() {
+    
+    //para mostrar uno solo, y quitamos la iteracion de la plantilla
+    	var context2 = 
+		{
+			author: { first: 'Cesar', last: 'Suarez', age: 27 },
+			tweet: 'Aprendiendo jQuery',
+			quote: 'Hoy sera jquery mañana sera otra cosa'
+		};
+    
+        //para mostrar multiples registros
+	var context = [
+		{
+			author: { first: 'Juan', last: 'Henao', age: 28 },
+			tweet: 'SM Rock',
+			quote: ''
+		},
+		{
+			author: { first: 'Cesar', last: 'Suarez', age: 27 },
+			tweet: '<strong>SM DiGITAL</strong>'
+		}
+	],
+		template = Handlebars.compile( $('#plantilla').html() ),
+		
+		template2 = Handlebars.compile( $('#template2').html() );
+
+	Handlebars.registerHelper('fullName2', function( author ) {
+		return author.first + ' ' + author.last + ' - ' + author.age;
+	});
+
+	$('ul.tweet').append( template2(context) );
+        $('ul.tweets').append( template(context2) );
+
+})();
+
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+

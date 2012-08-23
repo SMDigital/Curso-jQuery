@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>jQuery Eventos</title>
+	<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<h1>Cargando datos con json</h1>
+<button>Cargar</button>
+
+<div id="info"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+
+<script>
+
+$(document).ready(
+
+function() {
+	
+	
+	/*$('ul li.titulo').on('click', function() {
+		            $(this).next().show();
+            
+            console.log($(this).next());
+              
+	});*/
+        
+        //Otra forma de llegar al mismo resultado
+        $('button').on('click', function() {
+            
+            $.ajax({
+            url: "sincronizar.php",
+            dataType: 'json',
+            data: "parametro1=1",
+            success: callback
+            });
+              
+	});
+        
+        function callback(data){
+            alert("Llamo"+data)
+            
+            $.each(data,function(index,value) {
+                
+                $("#info").append("Id: "+data[index].id)
+                "<br>";
+            })
+            
+            
+        }
+   
+}
+
+)
+
+
+
+
+</script>
+
+
+</body>
+</html>
